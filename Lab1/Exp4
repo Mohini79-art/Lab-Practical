@@ -1,0 +1,12 @@
+git init
+echo "This is my first GitHub project" > README.md
+git status
+git add README.md
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/repository-name.git
+git remote -v
+git branch -M main
+git push -u origin main
+git clone https://github.com/username/repository-name.git
+cd repository-name
+git pull origin main
