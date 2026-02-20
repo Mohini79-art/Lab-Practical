@@ -1,0 +1,28 @@
+mkdir git_conflict_practical
+cd git_conflict_practical
+git init
+echo "Project Version 1" > file.txt
+git add .
+git commit -m "Initial commit"
+
+git checkout -b akash
+echo "Change from Akash" > file.txt
+git add .
+git commit -m "Akash updated file"
+
+git checkout master
+git checkout -b amit
+echo "Change from Amit" > file.txt
+git add .
+git commit -m "Amit updated file"
+
+git checkout master
+git merge akash
+git merge amit
+
+echo "Change from Akash" > file.txt
+echo "Change from Amit" >> file.txt
+git add .
+git commit -m "Resolved merge conflict"
+
+git log --oneline --graph --all
