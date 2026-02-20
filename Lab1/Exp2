@@ -1,0 +1,17 @@
+mkdir git_branch_practical
+cd git_branch_practical
+git init
+echo "Initial Project File" > app.txt
+git add .
+git commit -m "Initial commit on master"
+
+git branch feature-branch
+git checkout feature-branch
+echo "New Experimental Feature" >> app.txt
+git add .
+git commit -m "Added experimental feature"
+
+git checkout master
+git merge feature-branch
+
+git log --oneline --graph --all
